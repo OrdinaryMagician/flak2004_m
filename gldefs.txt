@@ -1,0 +1,6 @@
+HardwareShader Texture "models/FlakTex0.png"
+{
+	Shader "shaders/glsl/Envmask.fp"
+	Texture "masktex" "models/FlakTex0_mask.png"
+	Texture "envtex" "models/envmap/ekaenv.png"
+}

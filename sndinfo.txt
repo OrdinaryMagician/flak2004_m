@@ -1,0 +1,16 @@
+$pitchshiftrange 0
+
+flak/ammo	sounds/flak/FlakAmmoPickup.ogg
+flak/pickup	sounds/flak/FlakCannonPickup.ogg
+flak/select	sounds/flak/SwitchToFlakCannon.ogg
+flak/fire	sounds/flak/BFlakCannonFire.ogg
+flak/altfire	sounds/flak/BFlakCannonAltFire.ogg
+flak/fly	sounds/flak/BFlakCannonProjectile.ogg
+flak/explode	sounds/flak/FlakExplosionSnd.ogg
+flak/hit1	sounds/flak/Impact1.ogg
+flak/hit2	sounds/flak/Impact2.ogg
+flak/hit3	sounds/flak/Impact3.ogg
+flak/hit4	sounds/flak/Impact4Snd.ogg
+flak/hit5	sounds/flak/Impact6Snd.ogg
+flak/hit6	sounds/flak/Impact7Snd.ogg
+$random flak/hit { flak/hit1 flak/hit2 flak/hit3 flak/hit4 flak/hit5 flak/hit6 }

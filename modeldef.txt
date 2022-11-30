@@ -1,0 +1,132 @@
+Model "FlakCannonTest"
+{
+	Path "models"
+
+	Model 0 "FlakCannonPickup.iqm"
+	Skin 0 "Flak3rdperson.png"
+	Scale 32 32 32
+	ZOffset 16
+	ROTATING
+
+	FrameIndex XZW1 A 0 0
+}
+Model "FlakCannonTest"
+{
+	Path "models"
+
+	Model 1 "Flak_1st.iqm"
+	// materials are rearranged compared to the original model to fix draw order issues
+	SurfaceSkin 1 0 "FlakTex0.png"	// coil
+	SurfaceSkin 1 1 "FlakTex0.png"	// base
+	SurfaceSkin 1 2 "FlakTex1.png"	// grate
+	Scale -32 16 32
+	AngleOffset -90
+
+	// Still
+	Frame XZW2 A 1 "Aim:0"
+	// Deselect
+	Frame XZW2 B 1 "PutDown:0"
+	Frame XZW2 C 1 "PutDown:1"
+	Frame XZW2 D 1 "PutDown:2"
+	Frame XZW2 E 1 "PutDown:3"
+	Frame XZW2 F 1 "PutDown:4"
+	Frame XZW2 G 1 "PutDown:5"
+	Frame XZW2 H 1 "PutDown:6"
+	Frame XZW2 I 1 "PutDown:7"
+	// Select
+	Frame XZW2 J 1 "Pickup:0"
+	Frame XZW2 K 1 "Pickup:1"
+	Frame XZW2 L 1 "Pickup:2"
+	Frame XZW2 M 1 "Pickup:3"
+	Frame XZW2 N 1 "Pickup:4"
+	Frame XZW2 O 1 "Pickup:5"
+	Frame XZW2 P 1 "Pickup:6"
+	Frame XZW2 Q 1 "Pickup:7"
+	// Fire
+	Frame XZW2 R 1 "Fire:0"
+	Frame XZW2 S 1 "Fire:1"
+	Frame XZW2 T 1 "Fire:2"
+	Frame XZW2 U 1 "Fire:3"
+	Frame XZW2 V 1 "Fire:4"
+	Frame XZW2 W 1 "Fire:5"
+	Frame XZW2 X 1 "Fire:6"
+	Frame XZW2 Y 1 "Fire:7"
+	Frame XZW2 Z 1 "Fire:8"
+	Frame XZW3 A 1 "Fire:9"
+	Frame XZW3 B 1 "Fire:10"
+	Frame XZW3 C 1 "Fire:11"
+	Frame XZW3 D 1 "Fire:12"
+	Frame XZW3 E 1 "Fire:13"
+	Frame XZW3 F 1 "Fire:14"
+	Frame XZW3 G 1 "Fire:15"
+	Frame XZW3 H 1 "Fire:16"
+	Frame XZW3 I 1 "Fire:17"
+	Frame XZW3 J 1 "Fire:18"
+	Frame XZW3 K 1 "Fire:19"
+	Frame XZW3 L 1 "Fire:20"
+	Frame XZW3 M 1 "Fire:21"
+	Frame XZW3 N 1 "Fire:22"
+	Frame XZW3 O 1 "Fire:23"
+	Frame XZW3 P 1 "Fire:24"
+	// AltFire
+	Frame XZW3 Q 1 "AltFire:0"
+	Frame XZW3 R 1 "AltFire:1"
+	Frame XZW3 S 1 "AltFire:2"
+	Frame XZW3 T 1 "AltFire:3"
+	Frame XZW3 U 1 "AltFire:4"
+	Frame XZW3 V 1 "AltFire:5"
+	Frame XZW3 W 1 "AltFire:6"
+	Frame XZW3 X 1 "AltFire:7"
+	Frame XZW3 Y 1 "AltFire:8"
+	Frame XZW3 Z 1 "AltFire:9"
+	Frame XZW4 A 1 "AltFire:10"
+	Frame XZW4 B 1 "AltFire:11"
+	Frame XZW4 C 1 "AltFire:12"
+	Frame XZW4 D 1 "AltFire:13"
+	Frame XZW4 E 1 "AltFire:14"
+	Frame XZW4 F 1 "AltFire:15"
+	Frame XZW4 G 1 "AltFire:16"
+	Frame XZW4 H 1 "AltFire:17"
+	Frame XZW4 I 1 "AltFire:18"
+	Frame XZW4 J 1 "AltFire:19"
+	Frame XZW4 K 1 "AltFire:20"
+	Frame XZW4 L 1 "AltFire:21"
+	Frame XZW4 M 1 "AltFire:22"
+}
+
+Model "PlayerTest"
+{
+	Path "models"
+
+	Model 0 "MercFemaleB.iqm"
+	SurfaceSkin 0 0 "MercFemaleBBodyA.png"
+	SurfaceSkin 0 1 "MercFemaleBHeadA.png"
+	Scale 32 32 32
+
+	// Spawn
+	Frame XZW1 A 0 "Idle_Rest:0"
+	Frame XZW1 B 0 "Idle_Rest:1"
+	Frame XZW1 C 0 "Idle_Rest:2"
+	Frame XZW1 D 0 "Idle_Rest:3"
+	Frame XZW1 E 0 "Idle_Rest:4"
+	Frame XZW1 F 0 "Idle_Rest:5"
+	Frame XZW1 G 0 "Idle_Rest:6"
+	Frame XZW1 H 0 "Idle_Rest:7"
+	Frame XZW1 I 0 "Idle_Rest:8"
+	Frame XZW1 J 0 "Idle_Rest:9"
+	Frame XZW1 K 0 "Idle_Rest:10"
+	Frame XZW1 L 0 "Idle_Rest:11"
+	Frame XZW1 M 0 "Idle_Rest:12"
+	Frame XZW1 N 0 "Idle_Rest:13"
+	Frame XZW1 O 0 "Idle_Rest:14"
+	Frame XZW1 P 0 "Idle_Rest:15"
+	Frame XZW1 Q 0 "Idle_Rest:16"
+	Frame XZW1 R 0 "Idle_Rest:17"
+	Frame XZW1 S 0 "Idle_Rest:18"
+	Frame XZW1 T 0 "Idle_Rest:19"
+	Frame XZW1 U 0 "Idle_Rest:20"
+	Frame XZW1 V 0 "Idle_Rest:21"
+	Frame XZW1 W 0 "Idle_Rest:22"
+	Frame XZW1 X 0 "Idle_Rest:23"
+	Frame XZW1 Y 0 "Idle_Rest:24"
+}
