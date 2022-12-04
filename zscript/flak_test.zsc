@@ -1,0 +1,100 @@
+Class FlakCannonTest : Weapon
+{
+	// instant raise/lower
+	action void A_FullRaise()
+	{
+		if ( !player ) return;
+		if ( player.PendingWeapon != WP_NOCHANGE )
+		{
+			player.mo.DropWeapon();
+			return;
+		}
+		if ( !player.ReadyWeapon ) return;
+		let psp = player.GetPSprite(PSP_WEAPON);
+		if ( !psp ) return;
+		ResetPSprite(psp);
+		psp.y = WEAPONTOP;
+		// do not jump to ready state here, the weapon should do that
+		// directly once it finishes playing its select animation
+	}
+	action void A_FullLower()
+	{
+		if ( !player ) return;
+		if ( !player.ReadyWeapon )
+		{
+			player.mo.BringUpWeapon();
+			return;
+		}
+		let psp = player.GetPSprite(PSP_WEAPON);
+		if ( !psp ) return;
+		psp.y = WEAPONBOTTOM;
+		ResetPSprite(psp);
+		if ( player.playerstate == PST_DEAD )
+		{
+			// Player is dead, so don't bring up a pending weapon
+			// Player is dead, so keep the weapon off screen
+			player.SetPSprite(PSP_FLASH,null);
+			psp.SetState(player.ReadyWeapon.FindState('DeadLowered'));
+			return;
+		}
+		// [RH] Clear the flash state. Only needed for Strife.
+		player.SetPSprite(PSP_FLASH,null);
+		player.mo.BringUpWeapon();
+	}
+
+	Default
+	{
+		Inventory.PickupSound "flak/pickup";
+		Weapon.UpSound "flak/select";
+		Weapon.SlotNumber 7;
+		+FLOATBOB;
+		FloatBobStrength .25;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	Ready:
+		XZW2 A 1 A_WeaponReady();
+		Loop;
+	Deselect:
+		XZW2 BCDEFGH 2;
+		XZW2 I -1 A_FullLower();
+		Stop;
+	Select:
+		XZW2 J 2 A_FullRaise();
+		XZW2 KLMNOPQ 2;
+		Goto Ready;
+	Fire:
+		XZW2 R 1 A_StartSound("flak/fire",CHAN_WEAPON,CHANF_OVERLAP);
+		XZW2 STUVWX 1;
+		XZW2 YZ 2;
+		XZW3 ABCDEFGHIJ 2;
+		XZW3 KLMNOP 1;
+		Goto Ready;
+	AltFire:
+		XZW3 Q 1 A_StartSound("flak/altfire",CHAN_WEAPON,CHANF_OVERLAP);
+		XZW3 RSTU 1;
+		XZW3 VWXYZ 2;
+		XZW4 A 2;
+		XZW4 BCDEFGH 2;
+		XZW4 IJKLM 1;
+		Goto Ready;
+	}
+}
+
+Class PlayerTest : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+	}
+	States
+	{
+	Spawn:
+		XZW1 ABCDEFGHIJKLMNOPQRSTUVWXY 2;
+		Loop;
+	}
+}
