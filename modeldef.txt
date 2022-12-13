@@ -99,6 +99,7 @@ Model "PlayerTest"
 	Path "models"
 
 	Model 0 "MercFemaleB.iqm"
+	Animation 0 "BipedFemaleA.iqm"
 	SurfaceSkin 0 0 "MercFemaleBBodyA.png"
 	SurfaceSkin 0 1 "MercFemaleBHeadA.png"
 	Scale 32 32 32
